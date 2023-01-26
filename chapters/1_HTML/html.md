@@ -1,14 +1,14 @@
-# HTML - hypertext markup language
-# hypertext - uses http portion of internet markup -> code u write is annotated with keywords -> browser reads keywords and produces visual stuff
-# language - is human readable aswell, has some rules
-
-# html - sequence of tags that tell browsers how to make or show a webpage
-# standard markup language for creating web pages and web apps (together with CSS and JS to create the foundation of the web)
+# HTML 
+* Hypertext Markup Language
+* Hypertext - uses http portion of internet markup -> code you write is annotated with keywords -> browser reads keywords and produces visual stuff
+* language - is human readable aswell, has some rules
+* it is a sequence of tags that tell browsers how to make or show a webpage
+* standard markup language for creating web pages and web apps (together with CSS and JS to create the foundation of the web)
 
 # HTML Elements
 
-Unit of content - HTML element
-Basic structure of element: 
+* unit of content - HTML element
+* basic structure of element: 
 
 ```
 <p class="dog"> content </p>
@@ -19,6 +19,7 @@ Basic structure of element:
 3. Closing tag - end of element 
 4. (optional) The attribute name and value
 
+
 2 types of tags:
 * block elements
   *  structure the main parts of the page
@@ -28,7 +29,8 @@ Basic structure of element:
   * `<a>`, emphasized words `<em>`, important words `<strong>`
 
 
-Attributes 
+# Attributes 
+
 * additional info about an element
 * always specified in start tag
 * id, src, href 
@@ -44,7 +46,7 @@ Attributes
   * specify the relationship between the current and linked document with the `rel` attribute
   * specify where to open the linked document with the `target` attribute
 
-DOM 
+# DOM 
 * document object model (the model our web document is presented as)
 * tree structure 
 
@@ -58,8 +60,7 @@ DOM
 
 * is an instruction, must be the first line of code
 * what type of document to expect, version of HTML (html5 with the above)
-* prevents browser from going into quirks mode
-https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode
+* prevents browser from going into [quirks mode](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode)
 
 ## The Head 
 
