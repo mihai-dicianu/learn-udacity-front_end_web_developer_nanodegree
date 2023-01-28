@@ -150,6 +150,8 @@ I hope to learn about...
 Links: *
 * [css-tricks](https://css-tricks.com/)
 
+## Introduction
+
 * Cascading Style Sheets
 * Selectors - let you select/identify specific HTML elements (IDs, class, type)
 * CSS can select HTML elements by using an element’s tag name. A tag name is the word (or character) between HTML angle brackets.
@@ -174,7 +176,7 @@ selector:pseudo-class {
 }
 ```
 
-## Attributes selector
+### Attributes selector
 
 * Attribute selectors are a special kind of selector that will match elements based on their attributes and attribute values
 * Their generic syntax consists of square brackets (`[]`) containing an attribute name followed by an optional condition to match against the value of the attribute.
@@ -186,7 +188,7 @@ selector:pseudo-class {
   * `[attr=val]` This selector will select all elements with the attribute attr, but only if its value is val.
   * [attr~=val] This selector will select all elements with the attribute attr, but only if val is one of a space-separated list of words contained in attr's value. (This one is a bit more complex, so checking some [documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) might be helpful.)
 
-## Multiple selectors
+### Multiple selectors
 
 * We can select multiple HTML elements in the same CSS rule by separating them with commas. Add this to our styles.css file:
 
@@ -201,9 +203,9 @@ h6 {
 }
 ```
 
-## Linking CSS to HMTL
+### Linking CSS to HMTL
 
-### Inline
+#### Inline
 * Although CSS is a different language than HTML, it’s possible to write CSS code directly within HTML code using inline styles.
 * To style an HTML element, you can add the style attribute directly to the opening tag. After you add the attribute, you can set it equal to the CSS style(s) you’d like applied to that element.
 
@@ -216,7 +218,7 @@ h6 {
 
 * That said, there will be many times when you need to apply styles to only a specific HTML element. For this, you should always use CSS classes instead of inline styles.
 
-### Style Tag
+#### Style Tag
 
 * Fortunately, HTML allows you to write CSS code in its own dedicated section with the `<style>` element. CSS can be written between opening and closing `<style>` tags. To use the `<style>` element, it must be placed inside of the `<head>` element.
 
@@ -231,7 +233,7 @@ h6 {
 </head>
 ```
 
-### External Stylesheets
+#### External Stylesheets
 
 * When HTML and CSS code are in separate files, the files must be linked. Otherwise, the HTML file won’t be able to locate the CSS code, and the styling will not be applied.
 * You can use the `<link>` element to link HTML and CSS files together. The `<link>` element must be placed within the head of the HTML file. It is a self-closing tag and requires the following three attributes:
@@ -260,7 +262,7 @@ Note that in HTML5, you actually don’t have to specify type="text/css" here.
 @import “./blog-cards”;
 ```
 
-## Specificity
+### Specificity
 
 * Multiple styles for the same element, browser needs a mechanism to determine which style to apply 
 * Style hierarchy
@@ -272,7 +274,7 @@ Note that in HTML5, you actually don’t have to specify type="text/css" here.
 * There is a way to escape or override the specificity evaluation of elements using the !important keyword after an individual CSS property rule, but a couple important reminders:
 * Always look for a way to use specificity before even considering !important. Never use !important on site-wide CSS.
 
-## The Box Model
+### The Box Model
 
 ![Box Model](images/box_model.png)
 
@@ -281,9 +283,9 @@ Note that in HTML5, you actually don’t have to specify type="text/css" here.
 * The border `border-bottom: 1px solid #5D6063;`
 * Last is the margin, which surrounds the rest of the box. It is the space between the box and surrounding boxes.
 
-## Display 
+### Display 
 
-### Inline & Block
+#### Inline & Block
 
 * The biggest distinction between outside display options is whether elements occupy the entire horizontal line they are on (remember that elements are organized hierarchically on the DOM) or if they only occupy the width they need and then the following element can be placed next to them on the same horizontal line.
  * `block` - each rectangle would take up its own line and would be positioned one on top of the other. 
@@ -293,13 +295,13 @@ Note that in HTML5, you actually don’t have to specify type="text/css" here.
 * `inline-block` - just as `inline`, but you can set `width`, `height`
 * `none` - doesn't display the element
 
-### Z-index
+#### Z-index
 
 * When elements overlap, they are ordered on the z-axis (i.e., which element covers another). The z-index CSS property can be used to specify the z-order of these overlapping elements. Overlapping elements with a larger z-index cover those with a smaller one.
 
 * Without explicitly using `z-index` the last element written to the DOM (the last element you wrote in your code) will appear on top of all the others, and so on up the chain of your elements.
 
-### Absolute vs Relative units
+#### Absolute vs Relative units
 
 * Many CSS properties require a unit of measurement. There’s a lot of units available, but the most common ones you’ll encounter are `px` (pixel) and `em` (pronounced like the letter m). The former is what you would intuitively call a pixel, regardless of whether the user has a retina display or not, and the latter is the current font size of the element in question.
 
@@ -334,7 +336,7 @@ body {
 }
 ```
 
-### Typography
+#### Typography
 
 * Text alignment - The aptly named text-align property defines the alignment of the text in an HTML element - `text-align: left;`
 * Underlined Text - The text-decoration property determines whether text is underlined or not. By setting it to none, we can remove the default underline from all of our links ` text-decoration: none;`
@@ -342,26 +344,26 @@ body {
 
 * Line Height - `line-height` property determines the amount of space between lines in the same paragraph. In traditional typography, `line-height` is called “leading” because printers used little strips of lead to increase the space between lines of text.
 
-### Font
+#### Font
 
-#### Font Family
+##### Font Family
 * `font-family` is another built-in CSS property that defines the typeface for whatever element you selected. It accepts multiple values because not all users will have the same fonts installed.
 * When using fonts on the web, you must first consider what fonts are available to your users. Every operating system, be it Windows, OS X, or Linux, comes with a set of pre-installed fonts that you can use for customizing your website. For a complete list of "web-safe" fonts, follow this [link](https://web.mit.edu/jmorzins/www/fonts.html).
 * The way it works is fairly simple. When using the font-family property, you specify the font(s) you want to use in your HTML.
 * Then, the browser, starting from left to right, looks at the font(s) you've specified and checks to see if it can render the text using the font(s) you've provided. If it can't use the first font, then the browser moves to the next font, and so-on.
 * The purpose for specifying multiple fonts is because not all fonts are available on every operating system. So, specifying multiple, similar fonts ensures users have a consistent experience regardless of the operating system they are using.
 
-#### Font Weight & Style
+##### Font Weight & Style
 * In CSS, font weights are expressed as numeric values between 100 and 900. Fortunately, there are relatively standardized, human-friendly terms for each of these numeric values. “Black” usually means 900, “bold” is 700, “regular” is 400, etc. Most families don’t supply a face for every single weight. For example, Roboto is missing “extra light” (200), “semi bold” (600), and “extra bold” (800).
 
 * It’s worth noting that each style and weight combination is designed as an entirely distinct face. In a high-quality font family, the condensed styles aren’t simply squashed versions of the roman faces, nor is the bold face merely a thicker version. Each letter in every face is hand-crafted to ensure it provides a uniform flow to its text.
 
-#### Emphasis & Importance
+##### Emphasis & Importance
 
 * For emphasized (usually italics) words, use the `<em>` tag.
 * For important words, use the `<strong>` tag. By default, `<strong>` elements are displayed in bold, but keep in mind that it is only the browser’s default behavior. Don’t use `<strong>` only to put some text in bold, but rather to give it more importance.
 
-#### External Fonts
+##### External Fonts
 
 * There are a number of ways to host fonts from external sources. One commonly used example is Google Fonts, which provides a great number of fonts free for use in web projects. If you go to the Google Fonts website linked below, you can select a font and then you will be provided with the line of code to link your font of choice. That link goes in the head section of your code like this:
 
@@ -378,7 +380,7 @@ body {
 }
 ```
 
-#### Colors
+##### Colors
 
 * Colors in CSS can be specified by the following methods:
 
@@ -396,6 +398,122 @@ body {
   * Each parameter (red, green, and blue) defines the intensity of the color and can be an integer between 0 and 255 or a percentage value (from 0% to 100%).
 
  * Predefined/Cross-browser Color Names - 140 color names are predefined in the HTML and CSS color specification, list [here](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+
+## Flexbox
+
+* To use flexbox set the `display` property of a div to `flex`. The items inside that element will automatically become flex items, and you can then use the flexbox syntax in your CSS code.
+* Flexbox (the Flexible Box Module) is a set of CSS rules for stretching multiple columns or rows across a parent container. 
+* Flex is unique amongst CSS properties because you have a main container and the items nested within it. CSS flex has properties that apply to both the element itself, and the items inside of it.
+
+### Axes and Direction with Flexbox
+
+* The Flexbox model relies on two axes: the main axis and the cross axis. The main axis is defined by flex-direction, which has four possible values:
+1. `row`
+2. `row-reverse`
+3. `column` 
+4. `column-reverse`
+
+* The two row settings will create the main axis horizontally - or `inline` direction. The two column settings will create the main axis vertically - or `block` direction. `block` or `inline` here refer to the CSS display settings which we have covered previously.
+
+### Ordering
+
+* There are three ways to explicitly set the order in which items will appear in a grid.
+1. Moving the HTML code for the elements themselves to reorder
+2. Appending `-reverse` to `row` or `column` will reverse the order in the specified row or column
+3. Using the `order` property of the individual items inside the grid
+
+### Aligning items & justifying content
+
+Docs:
+* [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox#alignment_justification_and_distribution_of_free_space_between_items)
+
+* To align items on the cross axis use `align-items` with the possible values:
+ * stretch 
+ * flex-start
+ * flex-end
+ * center
+
+* To justify content on the main axis use `justify-content`, which has the possible values:
+ * flex-start
+ * flex-end
+ * center
+ * space-around
+ * space-between 
+ * space-evenly
+
+## Grid 
+
+[Grid generator](https://cssgrid-generator.netlify.app/)
+[Grid items flow](https://mastery.games/post/grid-item-placement/)
+
+* To use CSS Grid set the `display` property of the container element to `grid`.
+
+![Flexbox and grid](./images/grid_vs_flex.png)
+
+* At the highest level CSS Grid excels at creating layouts for a webpage, while Flexbox is a master of content flow for each element that makes up the page layout.
+
+[Beginner’s Guide to choosing between CSS Grid and Flexbox](https://medium.com/youstart-labs/beginners-guide-to-choose-between-css-grid-and-flexbox-783005dd2412)
+[The Ultimate CSS Battle: Grid vs. Flexbox](https://hackernoon.com/the-ultimate-css-battle-grid-vs-flexbox-d40da0449faf)
+[Does CSS Grid Replace Flexbox?](https://hackernoon.com/the-ultimate-css-battle-grid-vs-flexbox-d40da0449faf)
+
+### Rows & columns
+
+* After setting the display property of your container div to grid, the next step is to set the rows and columns in your grid which can be done with the CSS properties:
+ * `grid-template-columns`
+ * `grid-template-rows`
+ 
+ * And to define gutters between rows and columns you can use the property `grid-gap` on the parent container that has the display property set to `grid`.
+
+### Grid areas
+
+* The `grid-area` property specifies a particular area or set of rows and columns that a grid item occupies. It is applied to the grid item itself with CSS. Here is an example:
+
+```
+.item{
+  grid-area: 1/2/3/3
+}
+```
+
+* Because `grid-area` is shorthand for the properties: `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`, the code above places the item from rows 1-3, and columns 2-3.
+
+* `grid-template-areas` is the property used to name the rows and columns of a grid and to set its layout. It could look like this:
+```
+  .container {
+      display:grid;
+      grid-template-columns: 300px 300px 300px;
+      grid-template-rows: 250px 600px;
+      grid-template-areas: 
+      "hd hd hd hd hd hd hd hd"
+      "sd sd sd main main main main main"
+      "ft ft ft ft ft ft ft ft";
+  }
+```
+
+* The named areas in the grid are then assigned to each element according to where you want them to be displayed in the grid:
+```
+.header {
+  grid-area: hd;
+}
+```
+* In the example above the element with the class `header` will stretch across the entire first row of columns because we have assigned it the `grid-area` `hd`, and we have defined the area `hd` with the value for `grid-template-areas` in the parent element.
+
+* CSS Grid includes advanced capabilities for creating large and complex grids. Some of these are:
+ * the `fr` unit represents a fraction of the available space in the grid container.
+ * Track listings with `repeat()` notation
+  * `grid-template-columns: repeat(7, 1fr);` creates 7 columns of even width 
+ * Track sizing and `minmax()`
+  * `grid-auto-rows: minmax(100px, auto);` would create rows that are at least 100px tall and can be as tall as the content inside them demands.
+
+
+
+* `grid-auto-rows` is used for cases with unknown number of rows
+
+
+
+
+
+
+
 
 
 
