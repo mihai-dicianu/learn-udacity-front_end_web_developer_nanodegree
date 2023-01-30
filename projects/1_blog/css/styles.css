@@ -1,1 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url(./buttons.css);
+@import url(./typography.css);
+
+body{
+  margin: auto 50px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 200px repeat(3, 200px);
+  grid-template-areas: 
+  "hd hd hd"  
+  "main main sidenav"
+  "ft ft ft";
+
+}
+
+header {
+  grid-area: hd;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  grid-area: ft;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 100px;
+  grid-template-areas: 
+  "links"
+  "subscribe"
+  "more";
+}
+
+.subscribe-header { 
+  margin: auto 0;
+}
+
+.subscribe-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

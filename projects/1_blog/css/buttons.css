@@ -7,6 +7,14 @@ button {
   box-shadow: var(--box-shadow);
 }
 
+input {
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+  box-shadow: var(--box-shadow);
+
+}
+
 
 .register-btn {
   background-color: aqua;
