@@ -15,12 +15,25 @@ input {
 
 }
 
+input,
+button {
+  margin: 0.5rem;
+}
+
+::placeholder {
+  text-align: center; 
+}
+
 
 .register-btn {
-  background-color: aqua;
+  background-color: orange;
 }
 
 .register-btn:hover {
   background-color: aliceblue;
   cursor: pointer;
+}
+
+a, a:visited {
+  color: orange;
 }

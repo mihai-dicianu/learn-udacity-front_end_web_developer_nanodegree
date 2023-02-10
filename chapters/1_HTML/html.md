@@ -338,6 +338,9 @@ body {
 
 #### Typography
 
+* Links: 
+ * [Typescale](https://typescale.com/) - font size calculator
+
 * Text alignment - The aptly named text-align property defines the alignment of the text in an HTML element - `text-align: left;`
 * Underlined Text - The text-decoration property determines whether text is underlined or not. By setting it to none, we can remove the default underline from all of our links ` text-decoration: none;`
 * Deleted text - The other common value for text-decoration is line-through to strike out “deleted” text. But, remember that meaning should always be conveyed through HTML—not CSS. It’s better to use the `<ins>` and `<del>` elements instead of adding a line-through style to, say, an ordinary `<p>` element.
