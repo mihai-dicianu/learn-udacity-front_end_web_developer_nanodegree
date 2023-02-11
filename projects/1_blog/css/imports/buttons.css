@@ -1,18 +1,26 @@
-@import url(./vars.css);
-
 button {
   border-radius: 10px;
-  border: 1px solid gray;
+  border: 1px solid black;
   padding: 0.5rem 1rem;
   box-shadow: var(--box-shadow);
 }
 
+.register-btn {
+  background-color: white;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: var(--box-shadow-hover);
+}
+
+
 input {
   border-radius: 10px;
-  border: 1px solid gray;
+  border: 1px solid black;
   padding: 0.5rem 1rem;
   box-shadow: var(--box-shadow);
-
+  /* background-color: var(--orange); */
 }
 
 input,
@@ -25,15 +33,7 @@ button {
 }
 
 
-.register-btn {
-  background-color: orange;
-}
-
-.register-btn:hover {
-  background-color: aliceblue;
-  cursor: pointer;
-}
 
 a, a:visited {
-  color: orange;
+  color: var(--blue);
 }
